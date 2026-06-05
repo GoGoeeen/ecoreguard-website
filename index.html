@@ -1,0 +1,479 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EcoReguard | EU EmpCo Compliance Solutions</title>
+<meta name="description" content="Check your exposure to the EU EmpCo Directive and prepare verifiable sustainability claims.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#4c6454",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "tertiary-container": "#0f3221",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#809987",
+                        "surface-bright": "#f8f9ff",
+                        "outline-variant": "#c2c8c1",
+                        "on-tertiary-container": "#779b85",
+                        "on-tertiary-fixed": "#002112",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#1a3023",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#a9cfb7",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#737973",
+                        "on-secondary-fixed": "#00201c",
+                        "on-tertiary-fixed-variant": "#2c4e3b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005049",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed": "#092014",
+                        "primary-fixed-dim": "#b3cdba",
+                        "tertiary": "#001c0f",
+                        "secondary-fixed-dim": "#91d3c8",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#acefe4",
+                        "on-primary-fixed-variant": "#354c3d",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#acefe4",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "secondary": "#246960",
+                        "inverse-primary": "#b3cdba",
+                        "on-secondary-container": "#2b6f66",
+                        "primary": "#1a3023",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#cfe9d5",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#c5ecd2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "12px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "4px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(115, 121, 115, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="EcoReguard Logo" class="h-10 w-auto" src="assets/ecoreguard-logo.webp">
+<span class="font-headline-md text-headline-md font-bold text-primary">EcoReguard</span>
+</div>
+<div class="hidden md:flex gap-6">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-md text-body-md" href="#empco">EmpCo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#check">Exposure-Check</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="mailto:contact@flustix.com">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label-sm text-label-sm hidden lg:block">EN</span>
+<div class="hidden lg:flex items-center bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-lg gap-2">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span class="font-label-sm text-label-sm">EmpCo applies from September 2026</span>
+</div>
+<a data-typeform-link class="bg-primary text-on-primary px-6 py-2.5 rounded hover:bg-secondary transition-all cursor-pointer active:scale-95 font-label-sm text-label-sm" href="#check">
+                    Get Started
+                </a>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section id="empco" class="relative py-16 md:py-24 overflow-hidden bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10 transition-all duration-700 opacity-100 translate-y-0">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                        Since March 27, sustainability communication became a <span class="text-secondary underline decoration-secondary-fixed">legal matter</span>.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        The EU EmpCo Directive bans vague environmental claims and self-invented labels. Companies in food, packaging and cosmetics must act now - or risk fines of up to 4% of annual turnover.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a data-typeform-link href="#check" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all group">
+                            Start compliance check
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a href="https://flustix.com/en/our-certification-marks/" class="border border-primary text-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-container transition-all">
+                            Start certification process
+                        </a>
+</div>
+</div>
+<div class="relative flex justify-center items-center transition-all duration-700 opacity-100 translate-y-0">
+<div class="absolute inset-0 bg-secondary-fixed/20 rounded-full blur-3xl -z-10"></div>
+<div class="relative w-full max-w-2xl">
+    <img alt="Non-compliant environmental claims overview" class="w-full h-auto drop-shadow-2xl rounded-xl border border-outline-variant/30" src="assets/claims.webp">
+</div>
+</div>
+</div>
+</section>
+<!-- Key Changes Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4 transition-all duration-700 opacity-100 translate-y-0">What changes from September 2026?</h2>
+<div class="h-1 w-24 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="bento-grid">
+<!-- Card 1 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-lowest p-8 border border-outline-variant rounded-xl hover:border-secondary transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 bg-secondary-fixed/30 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">block</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">No more vague claims</h3>
+<p class="text-on-surface-variant">Terms like "eco-friendly", "green" or "sustainable" are no longer permitted without specific, verifiable proof.</p>
+</div>
+<!-- Card 2 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-lowest p-8 border border-outline-variant rounded-xl hover:border-secondary transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 bg-secondary-fixed/30 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">No self-invented labels</h3>
+<p class="text-on-surface-variant">Sustainability labels must be based on independent certification systems and verified by third parties.</p>
+</div>
+<!-- Card 3 -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 border border-outline-variant rounded-xl hover:border-secondary transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 bg-secondary-fixed/30 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Offsetting alone is not enough</h3>
+<p class="text-on-surface-variant">Climate neutrality claims based solely on offsetting measures are explicitly prohibited from June 2026.</p>
+</div>
+<!-- Wide Card -->
+<div class="col-span-12 bg-primary-container text-on-primary p-8 lg:p-12 rounded-xl flex flex-col md:flex-row items-center gap-8 transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-20 h-20 bg-error/20 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-4xl">warning</span>
+</div>
+<div>
+<h3 class="font-display-lg text-display-lg-mobile text-on-primary mb-4">Significant sanctions</h3>
+<p class="text-on-primary-container text-body-lg">Member states set the penalties. Based on experience, EU consumer protection directives typically carry fines of up to 4% of annual turnover.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solution Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-secondary-fixed/10 rounded-2xl p-8 md:p-16 border border-secondary-fixed/20 flex flex-col items-center text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8 transition-all duration-700 opacity-100 translate-y-0">Your solution: EmpCo-compliant label</h2>
+<img alt="Flustix Certification Labels" class="w-full max-w-4xl h-auto mb-12 drop-shadow-md" src="assets/flustix-labels.webp">
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<a class="text-secondary font-bold hover:underline flex items-center gap-2 group" href="https://flustix.com/en/our-certification-marks/">
+<span class="material-symbols-outlined">download</span>
+                            Download EmpCo Whitepaper
+                        </a>
+<span class="text-outline-variant hidden sm:block">|</span>
+<p class="text-on-surface-variant font-body-md">Recognized, third-party verified, and legally safe.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Focus -->
+<section class="py-24 bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary text-center mb-16 transition-all duration-700 opacity-100 translate-y-0">Particularly affected: <br><span class="text-secondary">Three industries in focus</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Food -->
+<div class="group p-8 border-b-4 border-transparent hover:border-secondary hover:bg-surface-container-low transition-all duration-300 rounded-t-xl duration-700 opacity-100 translate-y-0">
+<div class="mb-6 text-secondary transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-5xl">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Food industry</h3>
+<p class="text-on-surface-variant">Organic labels, regional origin claims, and packaging promises must be substantiated from 2026 to avoid heavy litigation.</p>
+</div>
+<!-- Packaging -->
+<div class="group p-8 border-b-4 border-transparent hover:border-secondary hover:bg-surface-container-low transition-all duration-300 rounded-t-xl duration-700 opacity-100 translate-y-0">
+<div class="mb-6 text-secondary transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-5xl">inventory_2</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Packaging industry</h3>
+<p class="text-on-surface-variant">Claims like "Recyclable" or "plastic-free" now require rigorous independent certification and technical documentation.</p>
+</div>
+<!-- Cosmetics -->
+<div class="group p-8 border-b-4 border-transparent hover:border-secondary hover:bg-surface-container-low transition-all duration-300 rounded-t-xl duration-700 opacity-100 translate-y-0">
+<div class="mb-6 text-secondary transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-5xl">spa</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Cosmetics industry</h3>
+<p class="text-on-surface-variant">"Natural" and "vegan" differentiators are under scrutiny. EmpCo puts an end to self-declaration in beauty marketing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Advisor Section -->
+<section id="advisor" class="py-24 bg-primary-container">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-6 transition-all duration-700 opacity-100 translate-y-0">Questions about EmpCo? Our expert answers instantly.</h2>
+<p class="text-on-primary-container text-body-lg mb-8">Our AI-powered EmpCo advisor knows the directive in detail. Ask your questions - around the clock, free of charge.</p>
+<div class="flex items-center gap-4 text-on-primary/60">
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-secondary-fixed"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-primary-fixed"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-tertiary-fixed"></div>
+</div>
+<span class="font-label-sm text-label-sm">Trusted by 500+ EU Compliance Officers</span>
+</div>
+</div>
+<div class="glass-panel p-1 rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+<div class="bg-surface-container-lowest rounded-xl h-[400px] flex flex-col">
+<div class="bg-primary p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-on-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">robot_2</span>
+</div>
+<span class="text-on-primary font-bold">EmpCo Guru AI</span>
+</div>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-on-primary/40"></div>
+<div class="w-2 h-2 rounded-full bg-on-primary/40"></div>
+</div>
+</div>
+<div class="flex-1 p-6 space-y-4 overflow-y-auto">
+<div class="bg-surface-container-low p-4 rounded-lg rounded-tl-none max-w-[85%] text-on-surface">
+                                    Hello! I'm your EmpCo compliance assistant. How can I help you navigate the new EU directives today?
+                                </div>
+<div class="bg-secondary-container p-4 rounded-lg rounded-tr-none max-w-[85%] ml-auto text-on-secondary-container">
+                                    Is our "100% Recyclable" claim on PET bottles still allowed under EmpCo?
+                                </div>
+<div class="bg-surface-container-low p-4 rounded-lg rounded-tl-none max-w-[85%] text-on-surface">
+                                    Under Art. 2, such claims must be backed by a certified third-party scheme. flustix certifications are fully compliant. Would you like to check your specific label?
+                                </div>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<div class="flex gap-2">
+<input class="flex-1 border-outline-variant rounded-lg focus:ring-secondary focus:border-secondary text-on-surface bg-surface-bright" placeholder="Type your compliance question..." type="text">
+<button class="bg-secondary text-on-secondary p-2 rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-3xl mx-auto px-margin-desktop md:px-0">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary text-center mb-12 transition-all duration-700 opacity-100 translate-y-0">Frequently asked questions</h2>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<details class="group bg-surface-container-low rounded-xl" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-headline-md text-headline-md text-primary">What exactly is the EmpCo Directive?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-secondary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/30 pt-4">
+                            The EmpCo Directive (EU 2024/825) - fully titled "Empowering Consumers for the Green Transition" - extends existing unfair commercial practices rules with clear constraints for sustainability claims. Member states had to transpose it by March 27, 2026, and the new rules apply from September 27, 2026.
+                        </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-headline-md text-headline-md text-primary">Does EmpCo also affect B2B companies?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-secondary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/30 pt-4">
+                            While primarily aimed at B2C, many member states apply it to B2B. Germany and Italy already treat B2B sustainability claims with similar rigor. Suppliers to B2C brands must also prepare to provide verifiable proof to their clients.
+                        </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-headline-md text-headline-md text-primary">What happens if my company fails to meet requirements?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-secondary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/30 pt-4">
+                            Sanctions include fines up to 4% of annual turnover, injunctions from competitors/NGOs, and mandatory withdrawal of products from the EU market, alongside severe reputational damage.
+                        </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-surface-container-low rounded-xl">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-headline-md text-headline-md text-primary">How does flustix certification help?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-secondary">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md border-t border-outline-variant/30 pt-4">
+                            flustix provides independent, third-party verification that your sustainability claims are based on recognized systems. This directly fulfills EmpCo's requirement for verified sustainability labels.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section id="check" class="py-24 bg-secondary-fixed/20 relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 transition-all duration-700 opacity-100 translate-y-0">Know in 30 seconds whether you need to act.</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    The compliance check determines whether your company is affected by the EmpCo Directive. Get a clear risk assessment immediately.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a data-typeform-link href="#check" class="inline-block bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg hover:bg-secondary transition-all shadow-xl active:scale-95">
+                        Start compliance check now
+                    </a>
+</div>
+<p class="mt-8 text-secondary font-label-sm text-label-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                    Independent, recognized, EmpCo-compliant.
+                </p>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary py-16">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+<div class="transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex items-center gap-2 mb-6">
+<img alt="EcoReguard" class="h-8 brightness-0 invert opacity-80" src="assets/ecoreguard-logo.webp">
+<span class="font-headline-md text-headline-md text-on-primary">EcoReguard</span>
+</div>
+<p class="max-w-sm mb-8 opacity-70">
+                        Transforming regulatory fear into proactive process optimization with AI and certified transparency. Professional EU compliance for a sustainable future.
+                    </p>
+<p class="font-label-sm text-label-sm opacity-60">© 2026 EcoReguard. Professional EU Compliance Solutions.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 transition-all duration-700 opacity-100 translate-y-0">
+<div class="space-y-4 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="text-on-primary font-bold mb-6">Resources</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://ecoreguard.eu/wp-content/uploads/2026/03/2602_WhitePaper_EmpCo_EN_two-pager.pdf">EU Directive Guide</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="mailto:contact@flustix.com">Contact</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Imprint</a></li>
+</ul>
+</div>
+<div class="space-y-4 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="text-on-primary font-bold mb-6">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/privacy.html">Privacy Policy</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Legal Notice</a></li>
+<li class=""><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://flustix.com/">Partner: flustix</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-on-primary/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex gap-4">
+<a aria-label="Share EcoReguard" class="w-8 h-8 rounded bg-on-primary/5 flex items-center justify-center hover:bg-secondary transition-colors" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fecoreguard.eu">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+<a aria-label="Email EcoReguard" class="w-8 h-8 rounded bg-on-primary/5 flex items-center justify-center hover:bg-secondary transition-colors" href="mailto:contact@flustix.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="bg-tertiary-container px-4 py-2 rounded border border-on-primary/5">
+<p class="font-label-sm text-label-sm text-secondary-fixed">Updated June 2026</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for AI Advisor on Mobile -->
+<a data-voiceflow-link aria-label="Open EmpCo advisor" href="#advisor" class="fixed bottom-6 right-6 lg:hidden bg-secondary text-on-secondary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined">smart_toy</span>
+</a>
+<script>
+        // Smooth reveal of elements on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-grid > div, section h2, .grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+
+        const integrations = {
+            typeformUrl: "",
+            voiceflowUrl: ""
+        };
+        document.querySelectorAll('[data-typeform-link]').forEach(link => {
+            if (integrations.typeformUrl) link.href = integrations.typeformUrl;
+        });
+        document.querySelectorAll('[data-voiceflow-link]').forEach(link => {
+            if (integrations.voiceflowUrl) link.href = integrations.voiceflowUrl;
+        });
+    </script>
+
+
+</body></html>
+

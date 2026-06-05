@@ -1,0 +1,5 @@
+.playwright-mcp/
+.netlify/
+node_modules/
+desktop.png
+mobile.png
