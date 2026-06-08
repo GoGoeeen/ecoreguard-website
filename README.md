@@ -9,6 +9,12 @@ Static English landing page prepared for Netlify.
 - **Voiceflow** - EmpCo Guru AI chat integrated into the main landing page
 - **Google Fonts, Tailwind CSS, Material Symbols** - Loaded via CDN
 
+### Configuration
+
+**Voiceflow Project ID:** Set via environment variable `VOICEFLOW_PROJECT_ID`
+- In Netlify: Site settings → Build & deploy → Environment
+- Locally: Create `.env` file or set in terminal before serving
+
 ## Local preview
 
 Open `index.html` directly or serve the folder with any static web server.
