@@ -276,40 +276,7 @@
 <p class="text-on-primary-container text-body-lg mb-8">Our AI-powered EmpCo advisor knows the directive in detail. Ask your questions - around the clock, free of charge.</p>
 </div>
 <div class="glass-panel p-1 rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
-<div class="bg-surface-container-lowest rounded-xl h-[400px] flex flex-col">
-<div class="bg-primary p-4 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 bg-on-primary rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm">robot_2</span>
-</div>
-<span class="text-on-primary font-bold">EmpCo Guru AI</span>
-</div>
-<div class="flex gap-2">
-<div class="w-2 h-2 rounded-full bg-on-primary/40"></div>
-<div class="w-2 h-2 rounded-full bg-on-primary/40"></div>
-</div>
-</div>
-<div class="flex-1 p-6 space-y-4 overflow-y-auto">
-<div class="bg-surface-container-low p-4 rounded-lg rounded-tl-none max-w-[85%] text-on-surface">
-                                    Hello! I'm your EmpCo compliance assistant. How can I help you navigate the new EU directives today?
-                                </div>
-<div class="bg-secondary-container p-4 rounded-lg rounded-tr-none max-w-[85%] ml-auto text-on-secondary-container">
-                                    Is our "100% Recyclable" claim on PET bottles still allowed under EmpCo?
-                                </div>
-<div class="bg-surface-container-low p-4 rounded-lg rounded-tl-none max-w-[85%] text-on-surface">
-                                    Under Art. 2, such claims must be backed by a certified third-party scheme. flustix certifications are fully compliant. Would you like to check your specific label?
-                                </div>
-</div>
-<div class="p-4 border-t border-outline-variant">
-<div class="flex gap-2">
-<input class="flex-1 border-outline-variant rounded-lg focus:ring-secondary focus:border-secondary text-on-surface bg-surface-bright" placeholder="Type your compliance question..." type="text">
-<button class="bg-secondary text-on-secondary p-2 rounded-lg hover:bg-primary transition-colors">
-<span class="material-symbols-outlined">send</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+<div id="empco-guru-chat" class="bg-surface-container-lowest rounded-xl h-[400px] flex flex-col"></div>
 </div>
 </div>
 </section>
@@ -455,7 +422,7 @@
         });
 
         const integrations = {
-            typeformUrl: "",
+            typeformUrl: "check.html",
             voiceflowUrl: ""
         };
         document.querySelectorAll('[data-typeform-link]').forEach(link => {
@@ -465,6 +432,42 @@
             if (integrations.voiceflowUrl) link.href = integrations.voiceflowUrl;
         });
     </script>
+
+    <!-- Voiceflow Chat Integration -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '6915e99cb1871532598c67db' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    voice: {
+                        url: "https://runtime-api.voiceflow.com"
+                    },
+                    render: {
+                        mode: 'embedded',
+                        target: document.getElementById('empco-guru-chat')
+                    }
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+
+    <!-- Custom styling for Voiceflow to match EcoReguard design -->
+    <style>
+        #empco-guru-chat iframe {
+            border-radius: 0.5rem !important;
+        }
+        
+        /* Ensure the Voiceflow widget fits perfectly in the container */
+        #empco-guru-chat .vf-chat-frame {
+            height: 100% !important;
+        }
+    </style>
 
 
 </body></html>

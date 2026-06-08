@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Compliance Check | EcoReguard</title>
+    <meta name="description" content="EmpCo Compliance Check - Determine whether your company is affected by the EU EmpCo Directive.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#4c6454",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "tertiary-container": "#0f3221",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#809987",
+                        "surface-bright": "#f8f9ff",
+                        "outline-variant": "#c2c8c1",
+                        "on-tertiary-container": "#779b85",
+                        "on-tertiary-fixed": "#002112",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#1a3023",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#a9cfb7",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#737973",
+                        "on-secondary-fixed": "#00201c",
+                        "on-tertiary-fixed-variant": "#2c4e3b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005049",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed": "#092014",
+                        "primary-fixed-dim": "#b3cdba",
+                        "tertiary": "#001c0f",
+                        "secondary-fixed-dim": "#91d3c8",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#acefe4",
+                        "on-primary-fixed-variant": "#354c3d",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#acefe4",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "secondary": "#246960",
+                        "inverse-primary": "#b3cdba",
+                        "on-secondary-container": "#2b6f66",
+                        "primary": "#1a3023",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#cfe9d5",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#c5ecd2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "12px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "4px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+    <nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+        <div class="flex items-center gap-8">
+            <a href="/" class="flex items-center gap-2">
+                <img alt="EcoReguard Logo" class="h-10 w-auto" src="assets/ecoreguard-logo.webp">
+                <span class="font-headline-md text-headline-md font-bold text-primary">EcoReguard</span>
+            </a>
+            <div class="hidden md:flex gap-6">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/#empco">EmpCo</a>
+                <a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-md text-body-md" href="#check">Exposure-Check</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="mailto:contact@flustix.com">Contact</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-on-surface-variant font-label-sm text-label-sm hidden lg:block">EN</span>
+            <div class="hidden lg:flex items-center bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-lg gap-2">
+                <span class="material-symbols-outlined text-[18px]">timer</span>
+                <span class="font-label-sm text-label-sm">EmpCo applies from September 2026</span>
+            </div>
+            <a class="bg-primary text-on-primary px-6 py-2.5 rounded hover:bg-secondary transition-all cursor-pointer active:scale-95 font-label-sm text-label-sm" href="/">
+                Back
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-surface-bright">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-12">
+                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                    Compliance Check
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Find out in 30 seconds whether your company is affected by the EU EmpCo Directive and what actions you need to take.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="check" class="py-24 bg-surface-container-lowest">
+        <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 shadow-lg">
+                <!-- Embedded Typeform -->
+                <div class="w-full" style="min-height: 700px;">
+                    <iframe 
+                        id="typeform-frame"
+                        src="https://form.typeform.com/to/Jy8SwyFL?typeform-embed=embed-fullpage" 
+                        style="width:100%;height:100%;border:none;border-radius:0;min-height:700px;" 
+                        data-testid="typeform-embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-24 bg-background">
+        <div class="max-w-3xl mx-auto px-margin-desktop md:px-0">
+            <div class="bg-secondary-fixed/10 rounded-2xl p-8 md:p-12 border border-secondary-fixed/20">
+                <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary">info</span>
+                    About this check
+                </h2>
+                <div class="space-y-4 text-on-surface-variant">
+                    <p class="font-body-md">
+                        This quick assessment helps you determine whether your company falls under the scope of the EU EmpCo Directive. The questions focus on:
+                    </p>
+                    <ul class="space-y-2 ml-6">
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
+                            <span>Industry sector and product categories</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
+                            <span>Current sustainability claims in marketing</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
+                            <span>Geographic market presence</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
+                            <span>Existing certification and verification status</span>
+                        </li>
+                    </ul>
+                    <p class="font-body-md mt-4">
+                        Based on your responses, you'll receive immediate recommendations for compliance measures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back CTA -->
+    <section class="py-16 bg-surface-container-low">
+        <div class="max-w-3xl mx-auto px-margin-desktop text-center">
+            <p class="text-on-surface-variant font-body-md mb-6">
+                Questions about EmpCo? Check our detailed information on the main page.
+            </p>
+            <a href="/" class="inline-block bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:bg-secondary transition-all">
+                Back to EcoReguard
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary py-16">
+    <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img alt="EcoReguard" class="h-8 brightness-0 invert opacity-80" src="assets/ecoreguard-logo.webp">
+                    <span class="font-headline-md text-headline-md text-on-primary">EcoReguard</span>
+                </div>
+                <p class="max-w-sm mb-8 opacity-70">
+                    Transforming regulatory fear into proactive process optimization with AI and certified transparency. Professional EU compliance for a sustainable future.
+                </p>
+                <p class="font-label-sm text-label-sm opacity-60">© 2026 EcoReguard. Professional EU Compliance Solutions.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h4 class="text-on-primary font-bold mb-6">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://ecoreguard.eu/wp-content/uploads/2026/03/2602_WhitePaper_EmpCo_EN_two-pager.pdf">EU Directive Guide</a></li>
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="mailto:contact@flustix.com">Contact</a></li>
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Imprint</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-on-primary font-bold mb-6">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/privacy.html">Privacy Policy</a></li>
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Legal Notice</a></li>
+                        <li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://flustix.com/">Partner: flustix</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-on-primary/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex gap-4">
+                <a aria-label="Share EcoReguard" class="w-8 h-8 rounded bg-on-primary/5 flex items-center justify-center hover:bg-secondary transition-colors" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fecoreguard.eu/check.html">
+                    <span class="material-symbols-outlined text-[18px]">share</span>
+                </a>
+                <a aria-label="Email EcoReguard" class="w-8 h-8 rounded bg-on-primary/5 flex items-center justify-center hover:bg-secondary transition-colors" href="mailto:contact@flustix.com">
+                    <span class="material-symbols-outlined text-[18px]">mail</span>
+                </a>
+            </div>
+            <div class="bg-tertiary-container px-4 py-2 rounded border border-on-primary/5">
+                <p class="font-label-sm text-label-sm text-secondary-fixed">Updated June 2026</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Typeform Script for Enhanced Embed -->
+<script src="https://embed.typeform.com/next/embed.js"></script>
+<script>
+    // Ensure typeform embed loads properly
+    if (window.typeformEmbed) {
+        window.typeformEmbed.makeForms();
+    }
+</script>
+
+</body>
+</html>
