@@ -4,8 +4,10 @@ Static English landing page prepared for Netlify.
 
 ## Integrations
 
-Typeform and Voiceflow are intentionally inactive. To activate them, set
-`typeformUrl` and `voiceflowUrl` near the end of `index.html`.
+**Active as of June 2026:**
+- **Typeform** - Embedded compliance check form on `/check.html` 
+- **Voiceflow** - EmpCo Guru AI chat integrated into the main landing page
+- **Google Fonts, Tailwind CSS, Material Symbols** - Loaded via CDN
 
 ## Local preview
 
@@ -16,9 +18,21 @@ Open `index.html` directly or serve the folder with any static web server.
 Connect this repository to Netlify. No build command is required and the
 publish directory is the repository root.
 
-## Launch checklist
+## Site structure
 
-- Consider locally hosting Google Fonts before production launch.
-- Review legal claims about EmpCo before publication.
-- Legally review the privacy policy after activating Typeform or Voiceflow.
-- Connect the production domain and confirm redirects.
+- `index.html` - Main landing page with Voiceflow AI chat
+- `check.html` - EmpCo compliance check page with embedded Typeform
+- `imprint.html` - Legal impressum (FLUSTIX GmbH)
+- `privacy.html` - GDPR-compliant privacy policy (updated June 8, 2026)
+- `assets/` - Images and brand assets
+- `netlify.toml` - Netlify routing configuration
+
+## Pre-launch checklist
+
+- ✅ Privacy policy updated for Typeform & Voiceflow (June 8, 2026)
+- ⚠️ Consider locally hosting Google Fonts before production
+- ⚠️ Review EmpCo legal claims with legal counsel before launch
+- ⚠️ Verify Typeform data processing agreement (DPA) is signed
+- ⚠️ Verify Voiceflow data processing agreement (DPA) is signed
+- ⚠️ Connect production domain and test all redirects
+- ⚠️ Test compliance form and AI chat functionality in production
