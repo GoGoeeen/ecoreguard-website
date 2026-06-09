@@ -18,3 +18,8 @@
   from = "/datenschutz"
   to = "/privacy.html"
   status = 301
+
+[[redirects]]
+  from = "/certify"
+  to = "/certify.html"
+  status = 301

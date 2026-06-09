@@ -1,0 +1,459 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Start Certification Process | EcoReguard</title>
+<meta name="description" content="Choose the certification you want to apply for and start the process with EcoReguard.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-surface": "#0b1c30",
+                    "surface-tint": "#4c6454",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container": "#e5eeff",
+                    "tertiary-container": "#0f3221",
+                    "inverse-surface": "#213145",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#809987",
+                    "surface-bright": "#f8f9ff",
+                    "outline-variant": "#c2c8c1",
+                    "on-tertiary-container": "#779b85",
+                    "on-tertiary-fixed": "#002112",
+                    "surface-variant": "#d3e4fe",
+                    "primary-container": "#1a3023",
+                    "surface-container-high": "#dce9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#a9cfb7",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#737973",
+                    "on-secondary-fixed": "#00201c",
+                    "on-tertiary-fixed-variant": "#2c4e3b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005049",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed": "#092014",
+                    "primary-fixed-dim": "#b3cdba",
+                    "tertiary": "#001c0f",
+                    "secondary-fixed-dim": "#91d3c8",
+                    "on-error": "#ffffff",
+                    "background": "#f8f9ff",
+                    "secondary-container": "#acefe4",
+                    "on-primary-fixed-variant": "#354c3d",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed": "#acefe4",
+                    "error": "#ba1a1a",
+                    "on-background": "#0b1c30",
+                    "secondary": "#246960",
+                    "inverse-primary": "#b3cdba",
+                    "on-secondary-container": "#2b6f66",
+                    "primary": "#1a3023",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed": "#cfe9d5",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-fixed": "#c5ecd2"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "spacing": {
+                    "stack-md": "12px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-sm": "4px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px"
+                },
+                "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"]
+                },
+                "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                }
+            },
+        }
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<a href="/" class="flex items-center gap-2">
+<img alt="EcoReguard Logo" class="h-10 w-auto" src="assets/ecoreguard-logo.webp">
+<span class="font-headline-md text-headline-md font-bold text-primary">EcoReguard</span>
+</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a href="/" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm">
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+    Back
+</a>
+</div>
+</nav>
+</header>
+
+<main class="min-h-screen flex items-center justify-center py-16 px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-2xl mx-auto">
+    <!-- Header -->
+    <div class="mb-10 text-center">
+        <p class="text-secondary font-semibold uppercase tracking-[0.18em] text-xs mb-3">Certification</p>
+        <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-4">
+            Which certification are you interested in?
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+            Select a certification below to start the application process.
+        </p>
+    </div>
+
+    <!-- Certification Options -->
+    <div class="space-y-4">
+        <!-- Option A: Recyclability of packaging -->
+        <button
+            data-typeform-id="XWISkoWV"
+            class="cert-option w-full flex items-center gap-5 px-6 py-5 rounded-xl border-2 border-outline-variant bg-surface hover:border-secondary hover:bg-secondary-container/30 transition-all group text-left cursor-pointer"
+        >
+            <span class="flex-shrink-0 w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold text-label-sm group-hover:bg-secondary group-hover:text-on-secondary transition-all">A</span>
+            <span class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Recyclability of packaging</span>
+            <span class="material-symbols-outlined ml-auto text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+        </button>
+
+        <!-- Option B: Plastic-free -->
+        <button
+            data-typeform-id="bTvdtBCK"
+            class="cert-option w-full flex items-center gap-5 px-6 py-5 rounded-xl border-2 border-outline-variant bg-surface hover:border-secondary hover:bg-secondary-container/30 transition-all group text-left cursor-pointer"
+        >
+            <span class="flex-shrink-0 w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold text-label-sm group-hover:bg-secondary group-hover:text-on-secondary transition-all">B</span>
+            <span class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Plastic-free</span>
+            <span class="material-symbols-outlined ml-auto text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+        </button>
+
+        <!-- Option C: Microplastic-free -->
+        <button
+            data-typeform-id="M79By5WH"
+            class="cert-option w-full flex items-center gap-5 px-6 py-5 rounded-xl border-2 border-outline-variant bg-surface hover:border-secondary hover:bg-secondary-container/30 transition-all group text-left cursor-pointer"
+        >
+            <span class="flex-shrink-0 w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold text-label-sm group-hover:bg-secondary group-hover:text-on-secondary transition-all">C</span>
+            <span class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Microplastic-free</span>
+            <span class="material-symbols-outlined ml-auto text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+        </button>
+
+        <!-- Option D: Recycling -->
+        <button
+            data-typeform-id="fyNy6u1h"
+            class="cert-option w-full flex items-center gap-5 px-6 py-5 rounded-xl border-2 border-outline-variant bg-surface hover:border-secondary hover:bg-secondary-container/30 transition-all group text-left cursor-pointer"
+        >
+            <span class="flex-shrink-0 w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold text-label-sm group-hover:bg-secondary group-hover:text-on-secondary transition-all">D</span>
+            <span class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Recycling</span>
+            <span class="material-symbols-outlined ml-auto text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+        </button>
+    </div>
+
+    <p class="mt-8 text-secondary font-label-sm text-label-sm flex items-center justify-center gap-2 text-center">
+        <span class="material-symbols-outlined text-[16px]">verified</span>
+        Independent, recognized, EmpCo-compliant.
+    </p>
+</div>
+</main>
+
+<!-- Typeform Consent Modal -->
+<div id="typeform-consent-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/60" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="typeform-consent-title" aria-describedby="typeform-consent-description" class="relative w-full max-w-2xl rounded-[1.5rem] bg-surface text-on-surface shadow-2xl ring-1 ring-outline-variant overflow-hidden">
+        <div class="flex items-start justify-between gap-4 border-b border-outline-variant/20 p-6">
+            <div>
+                <p class="text-secondary font-semibold uppercase tracking-[0.18em] text-xs">External service</p>
+                <h2 id="typeform-consent-title" class="mt-3 text-2xl font-bold text-primary">Load external form</h2>
+            </div>
+            <button type="button" id="typeform-consent-close" class="text-on-surface-variant rounded-full p-2 hover:bg-surface-container-low transition" aria-label="Close dialog">
+                <span aria-hidden="true">✕</span>
+            </button>
+        </div>
+        <div id="typeform-consent-description" class="space-y-4 p-6 text-on-surface-variant">
+            <p>We use Typeform for our request form. Loading the form will open a connection to Typeform. Your IP address as well as device and browser information may be processed and cookies or similar technologies may be used.</p>
+            <p>For more information, please see our <a class="text-secondary hover:underline" href="/privacy.html">privacy policy</a>.</p>
+            <p id="typeform-consent-error" class="hidden rounded-xl border border-error/20 bg-error/10 px-4 py-3 text-error"></p>
+        </div>
+        <div class="flex flex-col-reverse gap-3 border-t border-outline-variant/20 bg-surface-container-low p-6 sm:flex-row sm:justify-end">
+            <button type="button" id="typeform-consent-cancel" class="rounded-full border border-outline-variant px-6 py-3 text-on-surface hover:bg-surface-container-low transition">Cancel</button>
+            <button type="button" id="typeform-consent-accept" class="rounded-full bg-secondary text-on-secondary px-6 py-3 font-bold hover:bg-[#37ada1] transition">Load form</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary py-16">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<img alt="EcoReguard" class="h-8 brightness-0 invert opacity-80" src="assets/ecoreguard-logo.webp">
+<span class="font-headline-md text-headline-md text-on-primary">EcoReguard</span>
+</div>
+<p class="max-w-sm mb-8 opacity-70">
+    Transforming regulatory fear into proactive process optimization with AI and certified transparency. Professional EU compliance for a sustainable future.
+</p>
+<p class="font-label-sm text-label-sm opacity-60">© 2026 EcoReguard. Professional EU Compliance Solutions.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="text-on-primary font-bold mb-6">Resources</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://ecoreguard.eu/wp-content/uploads/2026/03/2602_WhitePaper_EmpCo_EN_two-pager.pdf">EU Directive Guide</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="mailto:contact@flustix.com">Contact</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Imprint</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-primary font-bold mb-6">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/privacy.html">Privacy Policy</a></li>
+<li><a id="typeform-consent-reset" class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="#">Typeform-Einwilligung widerrufen</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="/imprint.html">Legal Notice</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary-fixed transition-colors font-label-sm" href="https://flustix.com/">Partner: flustix</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+    const TYPEFORM_CONSENT_STORAGE_KEY = "greenonion_typeform_consent";
+    const TYPEFORM_CONSENT_VERSION = "1";
+    const TYPEFORM_SCRIPT_SRC = "https://embed.typeform.com/next/embed.js";
+    const TYPEFORM_CSS_HREF = "https://embed.typeform.com/next/css/popup.css";
+    let typeformResourcesPromise = null;
+    let typeformScriptLoaded = false;
+    let typeformCssLoaded = false;
+    let typeformModalTrigger = null;
+    let currentTypeformId = null;
+
+    const consentModal = document.getElementById('typeform-consent-modal');
+    const consentAccept = document.getElementById('typeform-consent-accept');
+    const consentCancel = document.getElementById('typeform-consent-cancel');
+    const consentClose = document.getElementById('typeform-consent-close');
+    const consentError = document.getElementById('typeform-consent-error');
+    const resetConsentLink = document.getElementById('typeform-consent-reset');
+
+    document.querySelectorAll('.cert-option').forEach(btn => {
+        btn.addEventListener('click', handleCertOptionClick);
+    });
+
+    if (consentAccept) consentAccept.addEventListener('click', handleConsentAccept);
+    if (consentCancel) consentCancel.addEventListener('click', closeConsentModal);
+    if (consentClose) consentClose.addEventListener('click', closeConsentModal);
+    if (resetConsentLink) resetConsentLink.addEventListener('click', handleConsentReset);
+
+    function handleCertOptionClick(event) {
+        typeformModalTrigger = event.currentTarget;
+        currentTypeformId = event.currentTarget.dataset.typeformId;
+        if (hasValidTypeformConsent()) {
+            openTypeformWithConsent();
+        } else {
+            openConsentModal();
+        }
+    }
+
+    function getStoredTypeformConsent() {
+        try {
+            const raw = window.localStorage.getItem(TYPEFORM_CONSENT_STORAGE_KEY);
+            if (!raw) return null;
+            return JSON.parse(raw);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function hasValidTypeformConsent() {
+        const consent = getStoredTypeformConsent();
+        return Boolean(consent && consent.accepted === true && consent.version === TYPEFORM_CONSENT_VERSION && typeof consent.timestamp === 'string');
+    }
+
+    function storeTypeformConsent() {
+        const value = {
+            accepted: true,
+            version: TYPEFORM_CONSENT_VERSION,
+            timestamp: new Date().toISOString()
+        };
+        window.localStorage.setItem(TYPEFORM_CONSENT_STORAGE_KEY, JSON.stringify(value));
+    }
+
+    function clearTypeformConsent() {
+        window.localStorage.removeItem(TYPEFORM_CONSENT_STORAGE_KEY);
+    }
+
+    function setConsentError(message) {
+        if (!consentError) return;
+        if (message) {
+            consentError.textContent = message;
+            consentError.classList.remove('hidden');
+        } else {
+            consentError.textContent = '';
+            consentError.classList.add('hidden');
+        }
+    }
+
+    function openConsentModal() {
+        if (!consentModal) return;
+        setConsentError('');
+        consentModal.classList.remove('hidden');
+        consentModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (consentAccept) consentAccept.focus();
+        document.addEventListener('keydown', handleModalKeydown);
+    }
+
+    function closeConsentModal() {
+        if (!consentModal) return;
+        consentModal.classList.add('hidden');
+        consentModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', handleModalKeydown);
+        if (typeformModalTrigger && typeof typeformModalTrigger.focus === 'function') {
+            typeformModalTrigger.focus();
+        }
+    }
+
+    function handleModalKeydown(event) {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+            closeConsentModal();
+        }
+    }
+
+    if (consentModal) {
+        consentModal.addEventListener('click', function(event) {
+            if (event.target === consentModal) {
+                closeConsentModal();
+            }
+        });
+    }
+
+    async function handleConsentAccept() {
+        setConsentError('');
+        try {
+            await ensureTypeformResources();
+            storeTypeformConsent();
+            closeConsentModal();
+            openTypeformPopup();
+        } catch (error) {
+            setConsentError('Das Formular konnte gerade nicht geladen werden. Bitte versuchen Sie es später erneut.');
+        }
+    }
+
+    function ensureTypeformResources() {
+        if (typeformResourcesPromise) {
+            return typeformResourcesPromise;
+        }
+        typeformResourcesPromise = Promise.all([loadTypeformCss(), loadTypeformScript()])
+            .then(() => true)
+            .catch((error) => {
+                typeformResourcesPromise = null;
+                throw error;
+            });
+        return typeformResourcesPromise;
+    }
+
+    function loadTypeformCss() {
+        return new Promise((resolve, reject) => {
+            if (typeformCssLoaded || document.getElementById('typeform-popup-css')) {
+                typeformCssLoaded = true;
+                resolve(true);
+                return;
+            }
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = TYPEFORM_CSS_HREF;
+            link.id = 'typeform-popup-css';
+            link.onload = function() { typeformCssLoaded = true; resolve(true); };
+            link.onerror = function() { reject(new Error('Failed to load Typeform CSS')); };
+            document.head.appendChild(link);
+        });
+    }
+
+    function loadTypeformScript() {
+        return new Promise((resolve, reject) => {
+            if (typeformScriptLoaded || document.getElementById('typeform-embed-script')) {
+                typeformScriptLoaded = true;
+                resolve(true);
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = TYPEFORM_SCRIPT_SRC;
+            script.id = 'typeform-embed-script';
+            script.onload = function() { typeformScriptLoaded = true; resolve(true); };
+            script.onerror = function() { reject(new Error('Failed to load Typeform script')); };
+            document.head.appendChild(script);
+        });
+    }
+
+    function openTypeformWithConsent() {
+        if (!hasValidTypeformConsent()) {
+            openConsentModal();
+            return;
+        }
+        ensureTypeformResources()
+            .then(() => { openTypeformPopup(); })
+            .catch(() => {
+                alert('Das Formular konnte gerade nicht geladen werden. Bitte versuchen Sie es später erneut.');
+            });
+    }
+
+    function openTypeformPopup() {
+        if (!currentTypeformId) return;
+        if (!window.tf || typeof window.tf.createPopup !== 'function') {
+            throw new Error('Typeform embed SDK is not available');
+        }
+        const popup = window.tf.createPopup(currentTypeformId, {
+            mode: 'popup',
+            autoClose: false,
+            open: true
+        });
+        if (popup && typeof popup.open === 'function') {
+            popup.open();
+        }
+    }
+
+    function handleConsentReset(event) {
+        event.preventDefault();
+        clearTypeformConsent();
+    }
+</script>
+</body>
+</html>
