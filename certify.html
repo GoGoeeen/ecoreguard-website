@@ -142,6 +142,17 @@
         </p>
     </div>
 
+    <!-- EmpCo check completion notice (shown only when source=empco-check) -->
+    <div id="empco-check-notice" class="hidden mb-8 bg-secondary-fixed/10 border border-secondary-fixed/40 rounded-2xl p-6" aria-live="polite">
+        <div class="flex items-start gap-4">
+            <span class="flex-shrink-0 material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">check_circle</span>
+            <div>
+                <p class="font-title-lg text-title-lg text-primary mb-1">Your EmpCo compliance check has been completed.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">Continue by selecting the certification relevant to your products.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Certification Options -->
     <div class="space-y-4">
         <!-- Option A: Recyclability of packaging -->
@@ -454,6 +465,20 @@
         event.preventDefault();
         clearTypeformConsent();
     }
+
+    // Show EmpCo check notice when arriving from the compliance check
+    (function () {
+        var notice = document.getElementById('empco-check-notice');
+        if (!notice) return;
+        try {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('source') === 'empco-check') {
+                notice.classList.remove('hidden');
+            }
+        } catch (e) {
+            // URLSearchParams not supported — notice stays hidden
+        }
+    }());
 </script>
 </body>
 </html>

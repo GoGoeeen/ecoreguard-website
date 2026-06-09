@@ -156,14 +156,24 @@
     <section id="check" class="py-24 bg-surface-container-lowest">
         <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 shadow-lg">
-                <!-- Embedded Typeform -->
-                <div class="w-full" style="min-height: 700px;">
-                    <iframe 
-                        id="typeform-frame"
-                        src="https://form.typeform.com/to/Jy8SwyFL?typeform-embed=embed-fullpage" 
-                        style="width:100%;height:100%;border:none;border-radius:0;min-height:700px;" 
-                        data-testid="typeform-embed">
-                    </iframe>
+                <!-- Embedded Typeform (SDK widget) -->
+                <div id="typeform-widget-container" class="w-full" style="min-height: 700px;" data-testid="typeform-embed"></div>
+            </div>
+
+            <!-- Next step: shown after successful form submission -->
+            <div id="empco-next-step" class="hidden mt-8 bg-secondary-fixed/10 border border-secondary-fixed/40 rounded-2xl p-8 md:p-10" aria-live="polite">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-xl bg-secondary-fixed text-on-secondary-fixed">
+                        <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">check_circle</span>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-2">Compliance check completed</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Select the certification relevant to your company and continue with the appropriate application form.</p>
+                    </div>
+                    <a href="/certify.html?source=empco-check" class="flex-shrink-0 inline-flex items-center gap-2 bg-secondary text-on-secondary px-7 py-3.5 rounded-lg font-bold hover:bg-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+                        Select certification
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -269,13 +279,52 @@
     </div>
 </footer>
 
-<!-- Typeform Script for Enhanced Embed -->
+<!-- Typeform Embed SDK -->
 <script src="https://embed.typeform.com/next/embed.js"></script>
 <script>
-    // Ensure typeform embed loads properly
-    if (window.typeformEmbed) {
-        window.typeformEmbed.makeForms();
-    }
+    (function () {
+        var typeformContainer = document.getElementById('typeform-widget-container');
+        var nextStep = document.getElementById('empco-next-step');
+        var hasSubmitted = false;
+
+        if (!typeformContainer) {
+            console.error('Typeform container not found.');
+            return;
+        }
+
+        function initTypeformWidget() {
+            if (!window.tf || typeof window.tf.createWidget !== 'function') {
+                console.error('Typeform Embed SDK could not be loaded.');
+                return;
+            }
+
+            window.tf.createWidget('Jy8SwyFL', {
+                container: typeformContainer,
+                height: 700,
+                hideHeaders: true,
+                hideFooter: true,
+                onSubmit: function () {
+                    if (hasSubmitted) return;
+                    hasSubmitted = true;
+
+                    if (nextStep) {
+                        nextStep.classList.remove('hidden');
+                        window.setTimeout(function () {
+                            nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 500);
+                    }
+                }
+            });
+        }
+
+        // The SDK script is loaded synchronously above; if tf is already available, init now.
+        // Otherwise wait for the script's load event via DOMContentLoaded/load fallback.
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTypeformWidget);
+        } else {
+            initTypeformWidget();
+        }
+    }());
 </script>
 
 </body>
