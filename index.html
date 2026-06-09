@@ -138,7 +138,7 @@
 <span class="material-symbols-outlined text-[18px]">timer</span>
 <span class="font-label-sm text-label-sm">EmpCo applies from September 2026</span>
 </div>
-<a data-typeform-link onclick="handleTypeformLinkClick(event)" class="bg-primary text-on-primary px-6 py-2.5 rounded hover:bg-secondary transition-all cursor-pointer active:scale-95 font-label-sm text-label-sm" href="#check">
+<a data-typeform-link data-typeform-id="Jy8SwyFL" class="bg-primary text-on-primary px-6 py-2.5 rounded hover:bg-secondary transition-all cursor-pointer active:scale-95 font-label-sm text-label-sm" href="#check">
                     Get Started
                 </a>
 </div>
@@ -156,11 +156,11 @@
                         The EU EmpCo Directive bans vague environmental claims and self-invented labels. Companies in food, packaging and cosmetics must act now - or risk fines of up to 4% of annual turnover.
                     </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<a data-typeform-link onclick="handleTypeformLinkClick(event)" href="#check" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all group">
+<a data-typeform-link data-typeform-id="Jy8SwyFL" href="#check" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all group">
                             Start compliance check
                             <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
 </a>
-<a href="https://flustix.com/en/our-certification-marks/" class="border border-primary text-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-container transition-all">
+<a data-typeform-link data-typeform-id="vctA0n02" href="#check" class="border border-primary text-primary px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-container transition-all">
                             Start certification process
                         </a>
 </div>
@@ -336,7 +336,7 @@
                     The compliance check determines whether your company is affected by the EmpCo Directive. Get a clear risk assessment immediately.
                 </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
-<a data-typeform-link onclick="handleTypeformLinkClick(event)" href="#check" class="inline-block bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg hover:bg-secondary transition-all shadow-xl active:scale-95">
+<a data-typeform-link data-typeform-id="Jy8SwyFL" href="#check" class="inline-block bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg hover:bg-secondary transition-all shadow-xl active:scale-95">
                         Start compliance check now
                     </a>
 </div>
@@ -445,7 +445,7 @@
             observer.observe(el);
         });
 
-        const TYPEFORM_ID = "Jy8SwyFL";
+        const TYPEFORM_DEFAULT_ID = "Jy8SwyFL";
         const TYPEFORM_CONSENT_STORAGE_KEY = "greenonion_typeform_consent";
         const TYPEFORM_CONSENT_VERSION = "1";
         const TYPEFORM_SCRIPT_SRC = "https://embed.typeform.com/next/embed.js";
@@ -454,6 +454,7 @@
         let typeformScriptLoaded = false;
         let typeformCssLoaded = false;
         let typeformModalTrigger = null;
+        let currentTypeformId = TYPEFORM_DEFAULT_ID;
 
         const integrations = {
             typeformUrl: "#check",
@@ -524,6 +525,7 @@
             if (!event.currentTarget) return;
             event.preventDefault();
             typeformModalTrigger = event.currentTarget;
+            currentTypeformId = event.currentTarget.dataset.typeformId || TYPEFORM_DEFAULT_ID;
             if (hasValidTypeformConsent()) {
                 openTypeformWithConsent();
             } else {
@@ -651,10 +653,11 @@
         }
 
         function openTypeformPopup() {
+            const formId = currentTypeformId || TYPEFORM_DEFAULT_ID;
             if (!window.tf || typeof window.tf.createPopup !== 'function') {
                 throw new Error('Typeform embed SDK is not available');
             }
-            const popup = window.tf.createPopup(TYPEFORM_ID, {
+            const popup = window.tf.createPopup(formId, {
                 mode: 'popup',
                 autoClose: false,
                 open: true
