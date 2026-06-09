@@ -156,8 +156,8 @@
     <section id="check" class="py-24 bg-surface-container-lowest">
         <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 shadow-lg">
-                <!-- Embedded Typeform (SDK widget) -->
-                <div id="typeform-widget-container" class="w-full" style="min-height: 700px;" data-testid="typeform-embed"></div>
+                <!-- Embedded Typeform -->
+                <div data-tf-live="01KTP6JQDZB5AC19254N2Y6ABY" id="typeform-widget-container" style="width:100%;min-height:700px;" data-testid="typeform-embed"></div>
             </div>
 
             <!-- Next step: shown after successful form submission -->
@@ -279,51 +279,29 @@
     </div>
 </footer>
 
-<!-- Typeform Embed SDK -->
-<script src="https://embed.typeform.com/next/embed.js"></script>
+<!-- Typeform Embed SDK (auto-initialises data-tf-live widget) -->
+<script src="//embed.typeform.com/next/embed.js"></script>
 <script>
     (function () {
-        var typeformContainer = document.getElementById('typeform-widget-container');
         var nextStep = document.getElementById('empco-next-step');
         var hasSubmitted = false;
 
-        if (!typeformContainer) {
-            console.error('Typeform container not found.');
-            return;
-        }
+        // Typeform dispatches a postMessage when the form is submitted.
+        window.addEventListener('message', function (event) {
+            if (!event.data || typeof event.data !== 'object') return;
+            // Covers both { type: 'form-submit' } and { name: 'form-submit' } variants.
+            var msgType = event.data.type || event.data.name || '';
+            if (msgType !== 'form-submit') return;
+            if (hasSubmitted) return;
+            hasSubmitted = true;
 
-        function initTypeformWidget() {
-            if (!window.tf || typeof window.tf.createWidget !== 'function') {
-                console.error('Typeform Embed SDK could not be loaded.');
-                return;
+            if (nextStep) {
+                nextStep.classList.remove('hidden');
+                window.setTimeout(function () {
+                    nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 500);
             }
-
-            window.tf.createWidget('Jy8SwyFL', {
-                container: typeformContainer,
-                height: 700,
-                hideHeaders: true,
-                hideFooter: true,
-                onSubmit: function () {
-                    if (hasSubmitted) return;
-                    hasSubmitted = true;
-
-                    if (nextStep) {
-                        nextStep.classList.remove('hidden');
-                        window.setTimeout(function () {
-                            nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 500);
-                    }
-                }
-            });
-        }
-
-        // The SDK script is loaded synchronously above; if tf is already available, init now.
-        // Otherwise wait for the script's load event via DOMContentLoaded/load fallback.
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initTypeformWidget);
-        } else {
-            initTypeformWidget();
-        }
+        });
     }());
 </script>
 
