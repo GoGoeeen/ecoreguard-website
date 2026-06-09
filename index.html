@@ -267,16 +267,59 @@
 </div>
 </div>
 </section>
-<!-- AI Advisor Section -->
+<!-- EmpCo Chatbot Section -->
 <section id="advisor" class="py-24 bg-primary-container">
 <div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 <div class="transition-all duration-700 opacity-100 translate-y-0">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-6 transition-all duration-700 opacity-100 translate-y-0">Questions about EmpCo? Our expert answers instantly.</h2>
-<p class="text-on-primary-container text-body-lg mb-8">Our AI-powered EmpCo advisor knows the directive in detail. Ask your questions - around the clock, free of charge.</p>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-6">Ask the EmpCo Assistant</h2>
+<p class="text-on-primary-container text-body-lg mb-8">Get an initial indication whether your environmental claims may be affected by the EU EmpCo rules.</p>
+<ul class="space-y-4 text-on-primary-container">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed shrink-0 mt-0.5">check_circle</span>
+<span>Find out if your product claims trigger EmpCo obligations</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed shrink-0 mt-0.5">check_circle</span>
+<span>Understand what documentation you need to prepare</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed shrink-0 mt-0.5">check_circle</span>
+<span>Available around the clock, free of charge</span>
+</li>
+</ul>
 </div>
-<div class="glass-panel p-1 rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
-<div id="empco-guru-chat" class="bg-surface-container-lowest rounded-xl h-[400px] flex flex-col"></div>
+<div class="transition-all duration-700 opacity-100 translate-y-0">
+<div class="glass-panel p-1 rounded-2xl shadow-2xl overflow-hidden">
+<div class="bg-surface-container-lowest rounded-xl flex flex-col" style="height:420px">
+<!-- Chat messages -->
+<div id="empco-chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3">
+<div class="flex gap-2 items-start">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary" style="font-size:16px">smart_toy</span>
+</div>
+<div class="bg-surface-container rounded-xl px-4 py-3 text-on-surface text-sm max-w-[85%]">Hi! Ask me anything about the EU EmpCo Directive and how it affects your environmental claims.</div>
+</div>
+</div>
+<!-- Input area -->
+<div class="border-t border-outline-variant/30 p-3 flex gap-2">
+<input id="empco-chat-input" type="text" placeholder="Example: We sell B2C products and use the term climate-friendly. Are we affected?" autocomplete="off" class="flex-1 bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+<button id="empco-chat-btn" type="button" class="bg-secondary text-on-secondary px-4 py-2.5 rounded-lg font-bold text-sm hover:bg-[#1a5b53] transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap">Ask question</button>
+</div>
+</div>
+</div>
+<!-- Privacy and liability notice -->
+<p class="mt-4 text-on-primary-container/70 text-xs leading-relaxed">
+<span class="font-bold text-on-primary-container/90">Privacy and liability notice:</span> Please do not enter personal, confidential or sensitive business information. Your message is processed to generate an automated response. The chatbot provides general information only and does not constitute legal advice. EcoReguard assumes no liability for the accuracy, completeness or consequences of chatbot responses. For a binding assessment, please consult a qualified legal advisor or request an individual review.
+</p>
+<!-- Lead CTA -->
+<div class="mt-5">
+<a href="/check.html" class="inline-flex items-center gap-2 text-secondary-fixed font-bold text-sm hover:text-tertiary-fixed transition-colors group">
+Need a concrete assessment? Start the EmpCo Check.
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" style="font-size:16px">arrow_forward</span>
+</a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -685,43 +728,93 @@
         }
     </script>
 
-    <!-- Voiceflow Chat Integration -->
-    <script type="text/javascript">
-        // Set Voiceflow Project ID via environment variable for security
-        // Configure VOICEFLOW_PROJECT_ID in Netlify environment or via .env file
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-                window.voiceflow.chat.load({
-                    verify: { projectID: window.VOICEFLOW_PROJECT_ID || '' },
-                    url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    voice: {
-                        url: "https://runtime-api.voiceflow.com"
-                    },
-                    render: {
-                        mode: 'embedded',
-                        target: document.getElementById('empco-guru-chat')
-                    }
-                });
-            }
-            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-            v.type = "text/javascript"; 
-            s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-    </script>
+    <!-- EmpCo Chatbot -->
+    <script>
+        (function () {
+            var CHAT_API = 'https://ecoreguard.netlify.app/api/chat';
+            var messagesEl = document.getElementById('empco-chat-messages');
+            var inputEl = document.getElementById('empco-chat-input');
+            var btnEl = document.getElementById('empco-chat-btn');
 
-    <!-- Custom styling for Voiceflow to match EcoReguard design -->
-    <style>
-        #empco-guru-chat iframe {
-            border-radius: 0.5rem !important;
-        }
-        
-        /* Ensure the Voiceflow widget fits perfectly in the container */
-        #empco-guru-chat .vf-chat-frame {
-            height: 100% !important;
-        }
-    </style>
+            if (!messagesEl || !inputEl || !btnEl) return;
+
+            function escapeHtml(text) {
+                var div = document.createElement('div');
+                div.appendChild(document.createTextNode(text));
+                return div.innerHTML;
+            }
+
+            function appendMessage(text, isUser) {
+                var wrapper = document.createElement('div');
+                wrapper.className = 'flex gap-2 items-start' + (isUser ? ' flex-row-reverse' : '');
+                if (isUser) {
+                    wrapper.innerHTML = '<div class="bg-secondary text-on-secondary rounded-xl px-4 py-3 text-sm max-w-[85%]">' + escapeHtml(text) + '</div>';
+                } else {
+                    wrapper.innerHTML =
+                        '<div class="w-7 h-7 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 mt-0.5">' +
+                        '<span class="material-symbols-outlined text-secondary" style="font-size:16px">smart_toy</span>' +
+                        '</div>' +
+                        '<div class="bg-surface-container rounded-xl px-4 py-3 text-on-surface text-sm max-w-[85%]">' + escapeHtml(text) + '</div>';
+                }
+                messagesEl.appendChild(wrapper);
+                messagesEl.scrollTop = messagesEl.scrollHeight;
+            }
+
+            function showThinking() {
+                var wrapper = document.createElement('div');
+                wrapper.id = 'empco-thinking';
+                wrapper.className = 'flex gap-2 items-start';
+                wrapper.innerHTML =
+                    '<div class="w-7 h-7 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 mt-0.5">' +
+                    '<span class="material-symbols-outlined text-secondary" style="font-size:16px">smart_toy</span>' +
+                    '</div>' +
+                    '<div class="bg-surface-container rounded-xl px-4 py-3 text-on-surface-variant text-sm italic">Thinking...</div>';
+                messagesEl.appendChild(wrapper);
+                messagesEl.scrollTop = messagesEl.scrollHeight;
+            }
+
+            function hideThinking() {
+                var el = document.getElementById('empco-thinking');
+                if (el) el.remove();
+            }
+
+            async function sendMessage() {
+                var message = inputEl.value.trim();
+                if (!message) return;
+
+                appendMessage(message, true);
+                inputEl.value = '';
+                btnEl.disabled = true;
+                showThinking();
+
+                try {
+                    var response = await fetch(CHAT_API, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                        body: JSON.stringify({ message: message })
+                    });
+                    hideThinking();
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    var data = await response.json();
+                    appendMessage(data.answer || 'No answer received.', false);
+                } catch (err) {
+                    hideThinking();
+                    appendMessage('Sorry, the chatbot is currently unavailable. Please try again later.', false);
+                } finally {
+                    btnEl.disabled = false;
+                    inputEl.focus();
+                }
+            }
+
+            btnEl.addEventListener('click', sendMessage);
+            inputEl.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        })();
+    </script>
 
 </body></html>
 
