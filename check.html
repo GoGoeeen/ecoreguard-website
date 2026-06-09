@@ -295,25 +295,116 @@
     </div>
 </footer>
 
-<!-- Typeform Embed SDK (auto-initialises data-tf-live widget) -->
-<script src="//embed.typeform.com/next/embed.js"></script>
+<!-- Typeform Consent Modal -->
+<div id="typeform-consent-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="typeform-consent-title" aria-describedby="typeform-consent-description" class="relative w-full max-w-2xl rounded-[1.5rem] bg-surface text-on-surface shadow-2xl ring-1 ring-outline-variant overflow-hidden">
+        <div class="flex items-start justify-between gap-4 border-b border-outline-variant/20 p-6">
+            <div>
+                <p class="text-secondary font-semibold uppercase tracking-[0.18em] text-xs">External service</p>
+                <h2 id="typeform-consent-title" class="mt-3 text-2xl font-bold text-primary">Load external form</h2>
+            </div>
+            <button type="button" id="typeform-consent-close" class="text-on-surface-variant rounded-full p-2 hover:bg-surface-container-low transition" aria-label="Close dialog">
+                <span aria-hidden="true">✕</span>
+            </button>
+        </div>
+        <div id="typeform-consent-description" class="space-y-4 p-6 text-on-surface-variant">
+            <p>We use Typeform for our compliance check form. Loading the form will open a connection to Typeform. Your IP address as well as device and browser information may be processed and cookies or similar technologies may be used.</p>
+            <p>For more information, please see our <a class="text-secondary hover:underline" href="/privacy.html">privacy policy</a>.</p>
+        </div>
+        <div class="flex flex-col-reverse gap-3 border-t border-outline-variant/20 bg-surface-container-low p-6 sm:flex-row sm:justify-end">
+            <button type="button" id="typeform-consent-cancel" class="rounded-full border border-outline-variant px-6 py-3 text-on-surface hover:bg-surface-container-low transition">Cancel</button>
+            <button type="button" id="typeform-consent-accept" class="rounded-full bg-secondary text-on-secondary px-6 py-3 font-bold hover:bg-[#1a5b53] transition">Load form</button>
+        </div>
+    </div>
+</div>
+
 <script>
     (function () {
+        var CONSENT_KEY = 'greenonion_typeform_consent';
+        var CONSENT_VERSION = '1';
+
+        var modal = document.getElementById('typeform-consent-modal');
+        var btnAccept = document.getElementById('typeform-consent-accept');
+        var btnCancel = document.getElementById('typeform-consent-cancel');
+        var btnClose = document.getElementById('typeform-consent-close');
         var nextStep = document.getElementById('empco-next-step');
         var hasSubmitted = false;
 
-        // Typeform dispatches a postMessage when the form is submitted.
+        function hasConsent() {
+            try {
+                var raw = localStorage.getItem(CONSENT_KEY);
+                if (!raw) return false;
+                var c = JSON.parse(raw);
+                return c && c.accepted === true && c.version === CONSENT_VERSION;
+            } catch (e) { return false; }
+        }
+
+        function storeConsent() {
+            localStorage.setItem(CONSENT_KEY, JSON.stringify({
+                accepted: true,
+                version: CONSENT_VERSION,
+                timestamp: new Date().toISOString()
+            }));
+        }
+
+        function loadTypeform() {
+            if (document.getElementById('typeform-embed-script')) return;
+            var s = document.createElement('script');
+            s.id = 'typeform-embed-script';
+            s.src = '//embed.typeform.com/next/embed.js';
+            document.body.appendChild(s);
+        }
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            btnAccept.focus();
+            document.addEventListener('keydown', onKeydown);
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            document.removeEventListener('keydown', onKeydown);
+        }
+
+        function onKeydown(e) {
+            if (e.key === 'Escape') { closeModal(); history.back(); }
+        }
+
+        btnAccept.addEventListener('click', function () {
+            storeConsent();
+            closeModal();
+            loadTypeform();
+        });
+
+        btnCancel.addEventListener('click', function () { closeModal(); history.back(); });
+        btnClose.addEventListener('click', function () { closeModal(); history.back(); });
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) { closeModal(); history.back(); }
+        });
+
+        // On page load: load immediately if consent already given, else show modal
+        if (hasConsent()) {
+            loadTypeform();
+        } else {
+            openModal();
+        }
+
+        // Show next-step banner after Typeform submit
         window.addEventListener('message', function (event) {
             if (!event.data || typeof event.data !== 'object') return;
-            // Covers both { type: 'form-submit' } and { name: 'form-submit' } variants.
             var msgType = event.data.type || event.data.name || '';
             if (msgType !== 'form-submit') return;
             if (hasSubmitted) return;
             hasSubmitted = true;
-
             if (nextStep) {
                 nextStep.classList.remove('hidden');
-                window.setTimeout(function () {
+                setTimeout(function () {
                     nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 500);
             }
