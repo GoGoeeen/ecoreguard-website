@@ -23,3 +23,15 @@
   from = "/certify"
   to = "/certify.html"
   status = 301
+
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[build]
+  publish = "."

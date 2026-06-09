@@ -138,25 +138,41 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24 bg-surface-bright">
-        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="text-center mb-12">
-                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
-                    Compliance Check
-                </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    Find out in 30 seconds whether your company is affected by the EU EmpCo Directive and what actions you need to take.
-                </p>
+    <!-- Hero Banner -->
+    <section class="bg-primary-container py-10 md:py-14">
+        <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+            <div class="inline-flex items-center gap-2 bg-secondary-fixed/20 text-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                <span class="material-symbols-outlined text-[14px]">verified_user</span>
+                EmpCo Exposure Check
+            </div>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-4">
+                Are you affected by EmpCo?
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-primary-container max-w-xl mx-auto mb-8">
+                Answer a few questions and get an immediate risk assessment — free, in under 2 minutes.
+            </p>
+            <!-- Trust badges -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <div class="flex items-center gap-1.5 bg-on-primary/10 text-on-primary-container px-4 py-2 rounded-full text-sm">
+                    <span class="material-symbols-outlined text-secondary-fixed text-[16px]">timer</span>
+                    Under 2 minutes
+                </div>
+                <div class="flex items-center gap-1.5 bg-on-primary/10 text-on-primary-container px-4 py-2 rounded-full text-sm">
+                    <span class="material-symbols-outlined text-secondary-fixed text-[16px]">lock</span>
+                    No registration required
+                </div>
+                <div class="flex items-center gap-1.5 bg-on-primary/10 text-on-primary-container px-4 py-2 rounded-full text-sm">
+                    <span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+                    Immediate result
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Form Section -->
-    <section id="check" class="py-24 bg-surface-container-lowest">
+    <section id="check" class="py-10 bg-surface-container-low">
         <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 shadow-lg">
-                <!-- Embedded Typeform -->
                 <div data-tf-live="01KTP6JQDZB5AC19254N2Y6ABY" id="typeform-widget-container" style="width:100%;min-height:700px;" data-testid="typeform-embed"></div>
             </div>
 
@@ -170,7 +186,7 @@
                         <h2 class="font-headline-md text-headline-md text-primary mb-2">Compliance check completed</h2>
                         <p class="font-body-md text-body-md text-on-surface-variant">Select the certification relevant to your company and continue with the appropriate application form.</p>
                     </div>
-                    <a href="/certify.html?source=empco-check" class="flex-shrink-0 inline-flex items-center gap-2 bg-secondary text-on-secondary px-7 py-3.5 rounded-lg font-bold hover:bg-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+                    <a href="/certify.html?source=empco-check" class="flex-shrink-0 inline-flex items-center gap-2 bg-secondary text-on-secondary px-7 py-3.5 rounded-lg font-bold hover:bg-primary transition-all">
                         Select certification
                         <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                     </a>
@@ -179,53 +195,53 @@
         </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="py-24 bg-background">
-        <div class="max-w-3xl mx-auto px-margin-desktop md:px-0">
-            <div class="bg-secondary-fixed/10 rounded-2xl p-8 md:p-12 border border-secondary-fixed/20">
-                <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
-                    <span class="material-symbols-outlined text-secondary">info</span>
-                    About this check
-                </h2>
-                <div class="space-y-4 text-on-surface-variant">
-                    <p class="font-body-md">
-                        This quick assessment helps you determine whether your company falls under the scope of the EU EmpCo Directive. The questions focus on:
-                    </p>
-                    <ul class="space-y-2 ml-6">
-                        <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
+    <!-- Info + CTA -->
+    <section class="py-16 bg-surface-container-low">
+        <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- About this check -->
+                <div class="bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/30">
+                    <h2 class="font-headline-md text-headline-md text-primary mb-5 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">info</span>
+                        What we assess
+                    </h2>
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:18px">check_circle</span>
                             <span>Industry sector and product categories</span>
                         </li>
-                        <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
-                            <span>Current sustainability claims in marketing</span>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:18px">check_circle</span>
+                            <span>Sustainability claims used in marketing</span>
                         </li>
-                        <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
-                            <span>Geographic market presence</span>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:18px">check_circle</span>
+                            <span>Geographic market and B2B/B2C scope</span>
                         </li>
-                        <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-secondary flex-shrink-0">check_circle</span>
-                            <span>Existing certification and verification status</span>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:18px">check_circle</span>
+                            <span>Existing certifications and label usage</span>
                         </li>
                     </ul>
-                    <p class="font-body-md mt-4">
-                        Based on your responses, you'll receive immediate recommendations for compliance measures.
-                    </p>
+                </div>
+                <!-- Next step teaser -->
+                <div class="bg-primary-container rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-headline-md text-headline-md text-on-primary mb-3">Need a certified solution?</h2>
+                        <p class="text-on-primary-container mb-6">If your check reveals exposure, flustix certification provides independent, third-party verified compliance — recognized across the EU.</p>
+                    </div>
+                    <a href="/certify.html" class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-6 py-3 rounded-lg font-bold hover:bg-tertiary-fixed transition-all self-start">
+                        Learn about certification
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Back CTA -->
-    <section class="py-16 bg-surface-container-low">
-        <div class="max-w-3xl mx-auto px-margin-desktop text-center">
-            <p class="text-on-surface-variant font-body-md mb-6">
-                Questions about EmpCo? Check our detailed information on the main page.
-            </p>
-            <a href="/" class="inline-block bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:bg-secondary transition-all">
-                Back to EcoReguard
-            </a>
+            <div class="mt-8 text-center">
+                <a href="/" class="inline-flex items-center gap-2 text-secondary font-bold hover:underline">
+                    <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                    Back to EcoReguard
+                </a>
+            </div>
         </div>
     </section>
 </main>
