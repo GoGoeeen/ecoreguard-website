@@ -747,15 +747,29 @@ Need a concrete assessment? Start the EmpCo Check.
             function appendMessage(text, isUser) {
                 var wrapper = document.createElement('div');
                 wrapper.className = 'flex gap-2 items-start' + (isUser ? ' flex-row-reverse' : '');
+
+                var msgDiv = document.createElement('div');
+                msgDiv.style.whiteSpace = 'pre-wrap';
+                msgDiv.style.overflowWrap = 'anywhere';
+                msgDiv.textContent = text;
+
                 if (isUser) {
-                    wrapper.innerHTML = '<div class="bg-secondary text-on-secondary rounded-xl px-4 py-3 text-sm max-w-[85%]">' + escapeHtml(text) + '</div>';
+                    msgDiv.className = 'bg-secondary text-on-secondary rounded-xl px-4 py-3 text-sm max-w-[85%]';
+                    wrapper.appendChild(msgDiv);
                 } else {
-                    wrapper.innerHTML =
-                        '<div class="w-7 h-7 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 mt-0.5">' +
-                        '<span class="material-symbols-outlined text-secondary" style="font-size:16px">smart_toy</span>' +
-                        '</div>' +
-                        '<div class="bg-surface-container rounded-xl px-4 py-3 text-on-surface text-sm max-w-[85%]">' + escapeHtml(text) + '</div>';
+                    var avatarDiv = document.createElement('div');
+                    avatarDiv.className = 'w-7 h-7 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 mt-0.5';
+                    var icon = document.createElement('span');
+                    icon.className = 'material-symbols-outlined text-secondary';
+                    icon.style.fontSize = '16px';
+                    icon.textContent = 'smart_toy';
+                    avatarDiv.appendChild(icon);
+
+                    msgDiv.className = 'bg-surface-container rounded-xl px-4 py-3 text-on-surface text-sm max-w-[85%]';
+                    wrapper.appendChild(avatarDiv);
+                    wrapper.appendChild(msgDiv);
                 }
+
                 messagesEl.appendChild(wrapper);
                 messagesEl.scrollTop = messagesEl.scrollHeight;
             }
